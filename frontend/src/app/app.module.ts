@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 
 import { AppRoutingModule } from './app-routing.module'
@@ -19,7 +20,8 @@ import { DashboardModule } from './features/dashboard/dashboard.module'
             logOnly: environment.production
         }),
         AuthModule,
-        DashboardModule
+        DashboardModule,
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
