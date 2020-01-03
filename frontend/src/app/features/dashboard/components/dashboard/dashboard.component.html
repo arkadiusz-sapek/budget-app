@@ -1,5 +1,8 @@
 <div class="dashboard-wrapper">
     <gridster class="grid-layout" [options]="options">
+        <gridster-item [item]="dashboardItems.addTransactionPanel">
+            <add-transaction-panel></add-transaction-panel>
+        </gridster-item>
         <gridster-item [item]="dashboardItems.categoriesChart">
             <categories-chart></categories-chart>
         </gridster-item>
