@@ -6,13 +6,13 @@ import { Component } from '@angular/core'
     styleUrls: ['./categories-chart.component.scss']
 })
 export class CategoriesChartComponent {
-    public barChartOptions = {
+    public pieChartOptions = {
         scaleShowVerticalLines: false,
         responsive: true,
         maintainAspectRatio: false
     }
 
-    public barChartLabels = [
+    public pieChartLabels = [
         'Bills',
         'Travel',
         'Fuel',
@@ -21,7 +21,7 @@ export class CategoriesChartComponent {
         'Clothes',
         'General'
     ]
-    public barChartType = 'pie'
-    public barChartLegend = true
-    public barChartData = [{ data: [10, 20, 30, 40, 100, 40, 3] }]
+    public pieChartType = 'pie'
+    public pieChartLegend = true
+    public pieChartData = [{ data: [10, 20, 30, 40, 100, 40, 3] }]
 }

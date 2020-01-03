@@ -1,7 +1,10 @@
 <div class="dashboard-wrapper">
     <gridster class="grid-layout" [options]="options">
-        <gridster-item [item]="item" *ngFor="let item of dashboard">
+        <gridster-item [item]="dashboardItems.categoriesChart">
             <categories-chart></categories-chart>
+        </gridster-item>
+        <gridster-item [item]="dashboardItems.transactionsChart">
+            <transactions-chart></transactions-chart>
         </gridster-item>
     </gridster>
 </div>
