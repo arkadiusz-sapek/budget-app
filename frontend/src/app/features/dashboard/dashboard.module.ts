@@ -9,13 +9,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { CategoriesChartComponent } from './components/categories-chart/categories-chart.component'
 import { TransactionsChartComponent } from './components/transactions-chart/transactions-chart.component'
 import { AddTransactionPanelComponent } from './components/add-transaction-panel/add-transaction-panel.component'
+import { LastTransactionsTableComponent } from './components/last-transactions-table/last-transactions-table.component'
 
 @NgModule({
     declarations: [
         DashboardComponent,
         CategoriesChartComponent,
         TransactionsChartComponent,
-        AddTransactionPanelComponent
+        AddTransactionPanelComponent,
+        LastTransactionsTableComponent
     ],
     imports: [CommonModule, SharedModule, GridsterModule, ChartsModule]
 })
