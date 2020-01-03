@@ -1,5 +1,7 @@
 export const routes = {
-    dashboard: '',
+    dashboard: 'dashboard',
     signIn: 'sign-in',
-    logIn: 'log-in'
+    logIn: 'log-in',
+    categories: 'categories',
+    charts: 'charts'
 }
