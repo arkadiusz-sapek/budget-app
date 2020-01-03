@@ -1,1 +1,7 @@
-<mat-card>Simple card</mat-card>
+<div class="dashboard-wrapper">
+    <gridster [options]="options">
+        <gridster-item [item]="item" *ngFor="let item of dashboard">
+            some content
+        </gridster-item>
+    </gridster>
+</div>

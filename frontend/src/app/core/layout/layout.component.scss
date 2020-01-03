@@ -41,10 +41,9 @@ mat-drawer-content {
 }
 
 .drawer-content-wrapper {
-    margin-top: 2rem;
+    margin: 2rem auto;
     min-height: calc(100vh - 3rem);
     max-width: 1200px;
-    margin: auto;
 }
 
 .drawer-menu > a {
