@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router'
 import { routes } from './routes'
 import { LayoutComponent } from './core/layout/layout.component'
 
-import { DashboardComponent } from './features/dashboard/components/dashboard.component'
+import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component'
 import { LogInComponent } from './features/auth/components/log-in/log-in.component'
 import { SignInComponent } from './features/auth/components/sign-in/sign-in.component'
 
