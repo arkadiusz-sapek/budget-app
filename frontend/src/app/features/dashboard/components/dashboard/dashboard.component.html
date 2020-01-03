@@ -1,7 +1,24 @@
 <div class="dashboard-wrapper">
-    <gridster [options]="options">
+    <gridster class="grid-layout" [options]="options">
         <gridster-item [item]="item" *ngFor="let item of dashboard">
-            some content
+            <!-- <div>
+                <div style="display: block">
+                    dupa -->
+
+            <!-- <div style="position: relative; height:50px; width:50px"> -->
+            <canvas
+                style="width: inherit;height: inherit;"
+                baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+            >
+            </canvas>
+            <!-- </div> -->
+            <!-- </div>
+            </div> -->
         </gridster-item>
     </gridster>
 </div>
