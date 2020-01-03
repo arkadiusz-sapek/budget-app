@@ -1,1 +1,23 @@
-<h1>Log in</h1>
+<div class="auth-panel-wrapper">
+    <form
+        class="auth-form-wrapper"
+        [formGroup]="loginForm"
+        (ngSubmit)="onFormSubmit()"
+    >
+        <h4>Log in to continue.</h4>
+        <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Password" formControlName="password" />
+        </mat-form-field>
+        <button mat-stroked-button color="primary" type="submit">
+            Log in
+        </button>
+        <p>
+            If you don't have account then
+            <a routerLink="/sign-in" class="auth-link">sign in</a>
+        </p>
+    </form>
+</div>

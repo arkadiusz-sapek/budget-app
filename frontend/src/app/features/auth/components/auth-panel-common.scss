@@ -1,0 +1,31 @@
+@import '~src/variables.scss';
+
+.auth-panel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: $main-background;
+}
+
+.auth-form-wrapper {
+    width: 30rem;
+    padding: 3rem;
+    background-color: white;
+}
+
+.auth-form-wrapper > * {
+    width: 100%;
+}
+
+.auth-form-wrapper > button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.auth-link {
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
