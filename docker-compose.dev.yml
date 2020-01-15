@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+    frontend:
+        build:
+            dockerfile: dev.Dockerfile
+        volumes:
+            - ./frontend:/frontend:delegated
+            - /frontend/node_modules
+        ports:
+            - '4200:4200'
+
+    backend:
+        build:
+            dockerfile: dev.Dockerfile
+        volumes:
+            - ./backend:/backend:delegated
+            - /backend/node_modules
+        ports:
+            - '4000:4000'
+
+    db:
+        ports:
+            - '5432:5432'

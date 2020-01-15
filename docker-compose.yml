@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+    db:
+        container_name: db-service-budget-app
+        image: postgres:alpine
+        environment:
+            POSTGRES_PASSWORD: root
+            POSTGRES_USER: root
+            POSTGRES_DB: budget-app
+
+    frontend:
+        build:
+            context: ./frontend
+        container_name: frontend-service-budget-app
+
+    backend:
+        build:
+            context: ./backend
+        container_name: backend-service-budget-app
+        environment:
+            DB_HOST: db
+            DB_PORT: 5432
+            DB_USER: root
+            DB_PASSWORD: root
+            DB_DATABASE_NAME: budget-app
+        depends_on:
+            - db
+
+    nginx:
+        container_name: nginx-service-budget-app
+        build:
+            context: ./nginx
+            args:
+                NGINX_CONFIG: 'nginx.conf'
+        depends_on:
+            - frontend
+            - backend
+        ports:
+            - '80:80'
