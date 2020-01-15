@@ -11,8 +11,8 @@ export class UsersController {
     return await this.usersService.getAll();
   }
 
-  @Post()
-  public async register(@Body() user: UserDto) {
-    return await this.usersService.register(user);
-  }
+  //   @Post()
+  //   public async register(@Body() user: UserDto) {
+  //     return await this.usersService.register(user);
+  //   }
 }
