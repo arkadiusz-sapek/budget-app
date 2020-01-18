@@ -1,3 +1,5 @@
+const env = val => process.env[val];
+
 module.exports = {
   type: 'postgres',
   host: env('DB_HOST'),
@@ -10,7 +12,7 @@ module.exports = {
   migrationsRun: true,
   logging: false,
   entities: [`src/**/models/*.entity.ts`],
-  migrations: isProd ? [`dist/migration/*.js`] : [`src/**/Migration/**/*.ts`],
+  migrations: [`src/**/Migration/**/*.ts`],
   subscribers: [`src/**/*.subscriber.ts`],
   cli: {
     entitiesDir: `src/entity`,

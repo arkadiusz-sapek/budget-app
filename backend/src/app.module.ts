@@ -10,7 +10,17 @@ import { configService } from './config/config.service';
   imports: [
     AuthModule,
     UsersModule,
-    TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: process.env.DB_HOST,
+      url: process.env.DATABASE_URL,
+      port: 5432,
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE_NAME,
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: false,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
