@@ -10,9 +10,4 @@ export class UsersController {
   public async getAll() {
     return await this.usersService.getAll();
   }
-
-  //   @Post()
-  //   public async register(@Body() user: UserDto) {
-  //     return await this.usersService.register(user);
-  //   }
 }

@@ -11,9 +11,17 @@ export class AuthService {
     constructor(private http: HttpClient) {}
 
     signIn(credentials: Credentials) {
-        return this.http.post(`${environment.apiUrl}/${apiRoutes.signIn}`, {
-            email: 'test',
-            password: 'test'
-        })
+        console.log('odpalam')
+        const result = this.http.post(
+            `${environment.apiUrl}/${apiRoutes.signIn}`,
+            {
+                email: 'test',
+                password: 'test'
+            }
+        )
+
+        console.log(result.subscribe(d => console.log(d)))
+
+        return result
     }
 }
