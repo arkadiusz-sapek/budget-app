@@ -6,4 +6,5 @@ export interface Credentials {
 export interface User {
     id: number
     email: string
+    token: string
 }

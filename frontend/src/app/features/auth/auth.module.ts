@@ -5,6 +5,7 @@ import { EffectsModule } from '@ngrx/effects'
 import { StoreModule } from '@ngrx/store'
 
 import { SharedModule } from 'src/app/shared/shared.module'
+import { CoreModule } from 'src/app/core/core.module'
 
 import { SignInComponent } from './components/sign-in/sign-in.component'
 import { LogInComponent } from './components/log-in/log-in.component'
@@ -18,6 +19,7 @@ import { AuthService } from './services/auth.service'
         CommonModule,
         ReactiveFormsModule,
         SharedModule,
+        CoreModule,
         StoreModule.forRoot(fromAuth.reducer),
         EffectsModule.forRoot([AuthEffects])
     ],

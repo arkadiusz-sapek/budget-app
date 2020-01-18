@@ -11,7 +11,7 @@ import { environment } from '../environments/environment'
 
 import { AuthModule } from './features/auth/auth.module'
 import { DashboardModule } from './features/dashboard/dashboard.module'
-import { LayoutModule } from './core/layout/layout.module'
+import { CoreModule } from './core/core.module'
 
 @NgModule({
     declarations: [AppComponent],
@@ -24,7 +24,7 @@ import { LayoutModule } from './core/layout/layout.module'
             maxAge: 25,
             logOnly: environment.production
         }),
-        LayoutModule,
+        CoreModule.forRoot(),
         AuthModule,
         DashboardModule,
         BrowserAnimationsModule
