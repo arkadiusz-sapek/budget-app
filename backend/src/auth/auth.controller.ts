@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
-import { UserDto } from 'src/users/dto/user.dto';
+import { CredentialsDto } from 'src/users/dto/credentials.dto';
 
 import { AuthService } from './auth.service';
 
@@ -22,8 +22,8 @@ export class AuthController {
   }
 
   @Post('sign-in')
-  async register(@Body() user: UserDto) {
-    return this.authService.register(user);
+  async register(@Body() credentials: CredentialsDto) {
+    return this.authService.register(credentials);
   }
 
   @UseGuards(AuthGuard('jwt'))

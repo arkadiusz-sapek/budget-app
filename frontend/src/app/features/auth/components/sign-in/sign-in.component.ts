@@ -24,7 +24,9 @@ export class SignInComponent {
     })
 
     onSubmit() {
-        const payload: Credentials = this.signInForm.value
-        this.store.dispatch(AuthActions.signInRequested({ payload }))
+        const { email, password } = this.signInForm.value
+        this.store.dispatch(
+            AuthActions.signInRequested({ payload: { email, password } })
+        )
     }
 }

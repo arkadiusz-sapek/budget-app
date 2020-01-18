@@ -15,8 +15,8 @@ export class AuthService {
         const result = this.http.post(
             `${environment.apiUrl}/${apiRoutes.signIn}`,
             {
-                email: 'test',
-                password: 'test'
+                email: credentials.email,
+                password: credentials.password
             }
         )
 
