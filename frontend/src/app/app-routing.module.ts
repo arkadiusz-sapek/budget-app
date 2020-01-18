@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { routes } from './routes'
+import { routes } from './config/routes'
 import { LayoutComponent } from './core/layout/layout.component'
 
 import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component'

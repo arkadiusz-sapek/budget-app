@@ -1,4 +1,4 @@
-import { routes } from 'src/app/routes'
+import { routes } from 'src/app/config/routes'
 
 export const menuItems = [
     {
