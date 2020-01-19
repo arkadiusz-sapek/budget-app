@@ -1,5 +1,6 @@
 export enum FormError {
-    PasswordStrength = 'weakPassword',
     Required = 'required',
-    Email = 'email'
+    Email = 'email',
+    PasswordStrength = 'weakPassword',
+    PasswordNotMatch = 'passwordsNotMatch'
 }

@@ -42,12 +42,15 @@
                 matInput
                 placeholder="Password confirm"
                 formControlName="passwordConfirm"
+                [errorStateMatcher]="passwordConfirmMatcher"
                 type="password"
                 autocomplete="off"
             >
             <mat-error>
                 <error-msg
                     [control]="signInForm.get('passwordConfirm')"
+                    [formGroup]="signInForm"
+                    [specificErrorName]="'passwordsNotMatch'"
                     fieldName="Password confirm"
                 ></error-msg>
             </mat-error>

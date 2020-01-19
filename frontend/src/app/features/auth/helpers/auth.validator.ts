@@ -1,4 +1,5 @@
 import { AbstractControl, ValidationErrors, FormGroup } from '@angular/forms'
+import { FormError } from 'src/app/shared/models/errors-msg.model'
 
 export function PasswordsMatchValidator(
     control: FormGroup
@@ -10,7 +11,7 @@ export function PasswordsMatchValidator(
         return null
     }
 
-    return { passwordsNotMatch: true }
+    return { [FormError.PasswordNotMatch]: true }
 }
 
 export function PasswordStrengthValidator(
@@ -24,5 +25,5 @@ export function PasswordStrengthValidator(
         return null
     }
 
-    return { weakPassword: true }
+    return { [FormError.PasswordStrength]: true }
 }

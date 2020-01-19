@@ -8,6 +8,7 @@ import {
     PasswordStrengthValidator,
     PasswordsMatchValidator
 } from '../../helpers/auth.validator'
+import { PasswordMatchErrorMatcher } from '../../helpers/password-confirm-match.error-matcher'
 
 @Component({
     selector: 'sign-in',
@@ -20,6 +21,8 @@ export class SignInComponent {
         private readonly store: Store<fromAuth.State>
     ) {}
 
+    passwordConfirmMatcher = new PasswordMatchErrorMatcher()
+
     public signInForm = this.fb.group(
         {
             email: ['', [Validators.required, Validators.email]],
@@ -31,7 +34,6 @@ export class SignInComponent {
 
     onSubmit() {
         const { email, password } = this.signInForm.value
-        this.signInForm.controls
 
         this.store.dispatch(
             AuthActions.signInRequested({ payload: { email, password } })
