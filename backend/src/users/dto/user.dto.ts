@@ -1,4 +1,5 @@
-export class UserDto {
-  email: string;
-  password: string;
+import { CredentialsDto } from './credentials.dto';
+
+export class UserDto extends CredentialsDto {
+  id: string;
 }

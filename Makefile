@@ -10,4 +10,4 @@ dev:
 
 
 generate-migrations:
-	docker exec -it backend-service-skystatus yarn run migration:generate
+	docker exec -it backend-service-budget-app npm run migration:generate

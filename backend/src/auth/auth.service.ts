@@ -1,9 +1,11 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcryptjs';
 
+import { CredentialsDto } from 'src/users/dto/credentials.dto';
+import { User } from 'src/users/models/user.entity';
+
 import { UsersService } from '../users/users.service';
-import { JwtService } from '@nestjs/jwt';
-import { UserDto } from 'src/users/dto/user.dto';
 
 @Injectable()
 export class AuthService {
@@ -12,24 +14,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  //   async validateUser(email: string, pass: string): Promise<any> {
-  //     const user = await this.usersService.getUserByEmail(email);
-  //     if (user && user.password === pass) {
-  //       const { password, ...result } = user;
-  //       return result;
-  //     }
-  //     return null;
-  //   }
-
-  //   async login(user: any) {
-  //     const payload = { username: user.username, sub: user.userId };
-  //     return {
-  //       access_token: this.jwtService.sign(payload),
-  //     };
-  //   }
-
-  async register(register: UserDto) {
-    const { email, password } = register;
+  async register(user: CredentialsDto) {
+    const { email, password } = user;
 
     const emailExists = await this.usersService.getUserByEmail(email);
 
@@ -40,10 +26,12 @@ export class AuthService {
     const hash = await bcrypt.hash(password, 10);
     const newUser = await this.usersService.createUser(email, hash);
 
-    return newUser;
+    const userData = await this.signToken(newUser);
+
+    return userData;
   }
 
-  async login(login: UserDto) {
+  async login(login: CredentialsDto) {
     const { email, password } = login;
 
     const user = await this.usersService.getUserByEmail(email);
@@ -58,17 +46,18 @@ export class AuthService {
       throw new HttpException('Invalid credentials', HttpStatus.CONFLICT);
     }
 
-    const token = await this.signIn(user.id);
+    const userData = await this.signToken(user);
 
-    return {
-      ...user,
-      token,
-    };
+    return userData;
   }
 
-  async signIn(id: number) {
-    const user: any = { id };
-    const token = this.jwtService.sign(user);
-    return token;
+  async signToken({ id, email }: User) {
+    const token = this.jwtService.sign({ id });
+
+    return {
+      id,
+      email,
+      token,
+    };
   }
 }

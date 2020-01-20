@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { routes } from './routes'
+import { routes, modules } from './config/routes'
 import { LayoutComponent } from './core/layout/layout.component'
 
 import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component'
@@ -10,7 +10,7 @@ import { SignInComponent } from './features/auth/components/sign-in/sign-in.comp
 
 const appRoutes: Routes = [
     {
-        path: 'user',
+        path: modules.user,
         component: LayoutComponent,
         children: [
             {
