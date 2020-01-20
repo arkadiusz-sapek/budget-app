@@ -12,10 +12,12 @@ import { StorageService } from '../services/storage.service'
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
     constructor(private readonly storageService: StorageService) {}
-
+    //These any really can be anything
     intercept(
+        // tslint:disable-next-line: no-any
         req: HttpRequest<any>,
         next: HttpHandler
+        // tslint:disable-next-line: no-any
     ): Observable<HttpEvent<any>> {
         const token = this.storageService.getItem('token')
 
