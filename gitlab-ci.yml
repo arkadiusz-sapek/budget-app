@@ -1,7 +1,7 @@
-# .gitlab-ci.yml
-image: tmaier/docker-compose:18
-services:
-    - docker:dind
-build:
+stages:
+    - test
+test:
+    image: tmaier/docker-compose:18
+    services: docker:dind
     script:
         - make build-dev
