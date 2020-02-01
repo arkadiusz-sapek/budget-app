@@ -4,7 +4,7 @@ export const routes = {
     dashboard: 'dashboard',
     categories: 'categories',
     charts: 'charts'
-}
+}sdfsdfsdf
 
 export const modules = {
     user: 'user'
