@@ -5,6 +5,9 @@ build-dev:
 	docker-compose $(dev-dockerfile) build
 	$(MAKE) dev
 
+build-test:
+	docker-compose $(dev-dockerfile) build
+	
 dev:
 	docker-compose $(dev-dockerfile) up $(variadic_args)
 
