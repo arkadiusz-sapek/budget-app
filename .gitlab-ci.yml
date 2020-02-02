@@ -1,0 +1,8 @@
+stages:
+    - test
+test:
+    image: tmaier/docker-compose:18
+    services:
+        - docker:dind
+    script:
+        - make build-dev
