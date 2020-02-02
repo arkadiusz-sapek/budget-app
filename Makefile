@@ -3,7 +3,6 @@ prod-dockerfile := -f docker-compose.yml -f docker-compose.prod.yml
 
 build-dev:
 	docker-compose $(dev-dockerfile) build
-	$(MAKE) dev
 
 dev:
 	docker-compose $(dev-dockerfile) up $(variadic_args)
